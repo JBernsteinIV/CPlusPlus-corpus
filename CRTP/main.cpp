@@ -1,7 +1,5 @@
-//Driver program to test CRTP implementation.
-
-#include <iostream>
-#include <cctype>
+#include <iostream> 
+#include <cctype> //Purely for std::toupper().
 #include <string>
 #include "CRTP.cpp"
 
@@ -22,8 +20,8 @@ int main() {
 	std::cout << "CRTP Test\nPlease enter two numbers:\n";
 	std::cin >> left >> right;
 
-	Derived L = Derived(left);
-	Derived R = Derived(right);
+	Derived<int> L = Derived<int>(left);
+	Derived<int> R = Derived<int>(right);
 
 	char cont = 'Y';
 
