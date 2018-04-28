@@ -23,15 +23,15 @@ class Comparable {
 	}
 };
 
-
-class Derived : Comparable<Derived> {
-	int value;
+template<typename U>
+class Derived : Comparable<Derived<U> > {
+	U value;
 	friend bool operator< (Derived const& left, Derived const& right) {
 		return left.value < right.value;
 	}
 public:
 	Derived() = default;
-	Derived(int val) {
+	Derived(U val) {
 		this->value = val;
 	}
 };
